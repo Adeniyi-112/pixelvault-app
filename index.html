@@ -3,380 +3,506 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PIXELVAULT | Custom Design Studio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PIXELVAULT | Design Studio</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f7f8fa;color:#20242c}
-header{background:white;padding:18px 6%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #eee}
-.logo{font-size:23px;font-weight:800;color:#151c2c;letter-spacing:1px}
-.logo span{color:#3975df}
-button{border:0;padding:12px 16px;border-radius:7px;background:#2463d3;color:white;font-weight:bold;cursor:pointer;margin:3px}
-button:hover{opacity:.85}
-.secondary{background:#e9edf5;color:#20242c}
-.danger{background:#a83232}
-main{max-width:1050px;margin:auto;padding:30px 18px}
-.hero{background:#17243a;color:white;padding:45px 25px;border-radius:12px}
-.hero h1{font-size:36px;margin:0 0 12px}
-.hero p{color:#d5dce9;line-height:1.6}
-.section{margin-top:35px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:15px}
-.card,.panel{background:white;padding:22px;border:1px solid #e8eaf0;border-radius:10px}
-.panel{margin-top:20px}
-input,select,textarea{width:100%;padding:13px;margin:8px 0 15px;border:1px solid #d8dce5;border-radius:7px;font:inherit}
-textarea{min-height:110px}
-label{font-weight:bold;font-size:14px}
+body{margin:0;background:#f5f6f8;color:#202633;font-family:Arial,sans-serif}
+header{background:white;padding:17px 5%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #e5e7eb}
+.logo{font-size:23px;font-weight:900;letter-spacing:1px}
+.logo span{color:#3474d9}
+main{max-width:1100px;margin:auto;padding:22px 16px}
+button{background:#2866cc;color:white;border:0;border-radius:7px;padding:11px 15px;font-weight:bold;cursor:pointer;margin:3px}
+button.secondary{background:#e8edf5;color:#263449}
+button.danger{background:#a82e37}
+button:disabled{opacity:.5}
+input,textarea,select{width:100%;padding:12px;border:1px solid #dce0e7;border-radius:7px;margin:7px 0 14px;font:inherit}
+textarea{min-height:100px}
+label{font-size:14px;font-weight:bold}
+.hero{background:#18263c;color:white;padding:42px 25px;border-radius:12px}
+.hero h1{font-size:38px;margin:8px 0}
+.hero p{line-height:1.6;color:#d7deeb}
+.section{margin-top:25px}
+.panel,.card{background:white;border:1px solid #e6e8ed;border-radius:10px;padding:20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
+nav{display:flex;flex-wrap:wrap;gap:5px;margin-top:15px}
+nav button{font-size:13px}
 .hidden{display:none!important}
-.order{padding:16px;border:1px solid #e5e8ef;border-radius:8px;margin:12px 0;background:#fff}
-.status{font-weight:bold;color:#2463d3}
-nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}
-footer{text-align:center;padding:30px;color:#777}
-small{color:#687080;overflow-wrap:anywhere}
+.order{padding:15px;border:1px solid #e3e6ec;border-radius:8px;margin:12px 0}
+.muted{color:#707987;font-size:14px}
+.stat{font-size:28px;font-weight:800;color:#2866cc}
+.tag{display:inline-block;background:#edf2fa;padding:5px 9px;border-radius:20px;font-size:12px}
+footer{text-align:center;padding:30px;color:#78808c}
 </style>
 </head>
 <body>
 
 <header>
-<div class="logo">PIXEL<span>VAULT</span></div>
-<div id="accountArea"><button onclick="showAuth()">Sign in</button></div>
+ <div class="logo">PIXEL<span>VAULT</span></div>
+ <div id="accountArea"><button onclick="showAuth()">Sign in</button></div>
 </header>
 
 <main>
 <section class="hero">
-<p>CREATIVE DESIGN STUDIO</p>
-<h1>Your ideas.<br>Our creativity.</h1>
-<p>Professional posters, logos, flyers, banners and custom designs.</p>
-<button onclick="goToOrder()">Place an order</button>
+ <p>CREATIVE DESIGN STUDIO</p>
+ <h1>Your ideas.<br>Our creativity.</h1>
+ <p>Professional posters, logos, flyers, banners and custom designs.</p>
+ <button onclick="goToOrder()">Start an order</button>
 </section>
 
 <section class="section">
-<h2>Our Services</h2>
-<div class="grid">
-<div class="card"><h3>Poster Design</h3><p>Professional posters for events and promotions.</p></div>
-<div class="card"><h3>Logo Design</h3><p>Unique identities for brands and businesses.</p></div>
-<div class="card"><h3>Flyer Design</h3><p>Clean promotional flyers.</p></div>
-<div class="card"><h3>Banner Design</h3><p>Quality banners for online promotions.</p></div>
-</div>
+ <h2>Explore our services</h2>
+ <div class="grid">
+  <div class="card"><h3>Poster Design</h3><p class="muted">Professional event and business posters.</p></div>
+  <div class="card"><h3>Logo Design</h3><p class="muted">Distinctive identities for brands.</p></div>
+  <div class="card"><h3>Flyer Design</h3><p class="muted">Promotional designs for your business.</p></div>
+  <div class="card"><h3>Banner Design</h3><p class="muted">Online and promotional banners.</p></div>
+  <div class="card"><h3>Custom Design</h3><p class="muted">Tell us your idea and let's create it.</p></div>
+ </div>
 </section>
 
-<section id="authSection" class="section panel hidden">
-<h2>Welcome to PIXELVAULT</h2>
-<label>Email address</label>
-<input id="email" type="email" placeholder="Enter your email">
-<label>Password</label>
-<input id="password" type="password" placeholder="Enter your password">
-<button onclick="signup()">Create account</button>
-<button class="secondary" onclick="login()">Sign in</button>
-<p id="authMessage"></p>
+<section class="section">
+ <h2>Our design portfolio</h2>
+ <p class="muted">Explore the types of creative work available at PIXELVAULT.</p>
+ <div class="grid">
+  <div class="card"><span class="tag">01 / Branding</span><h3>Brand Identity</h3><p class="muted">Logos and visual identity concepts.</p></div>
+  <div class="card"><span class="tag">02 / Promotion</span><h3>Promotional Posters</h3><p class="muted">Designs for events, offers and announcements.</p></div>
+  <div class="card"><span class="tag">03 / Marketing</span><h3>Business Flyers</h3><p class="muted">Creative layouts for business promotion.</p></div>
+  <div class="card"><span class="tag">04 / Custom</span><h3>Special Projects</h3><p class="muted">Creative ideas made into designs.</p></div>
+ </div>
+</section>
+
+<section id="authSection" class="panel section hidden">
+ <h2>Welcome to PIXELVAULT</h2>
+ <label>Email address</label>
+ <input id="email" type="email" placeholder="Your email">
+ <label>Password</label>
+ <input id="password" type="password" placeholder="Your password">
+ <button onclick="signup()">Create account</button>
+ <button class="secondary" onclick="login()">Sign in</button>
+ <p id="authMessage" class="muted"></p>
 </section>
 
 <section id="userSection" class="section hidden">
-<div class="panel">
-<h2>Welcome!</h2>
-<p id="userEmail"></p>
-<nav>
-<button onclick="showPage('orderPage')">New Order</button>
-<button class="secondary" onclick="showPage('ordersPage');loadOrders()">My Orders</button>
-<button id="adminButton" class="hidden" onclick="showPage('adminPage');loadAdminOrders()">Admin Dashboard</button>
-<button class="secondary" onclick="logout()">Sign out</button>
-</nav>
-</div>
+ <div class="panel">
+  <h2 id="welcome">Your dashboard</h2>
+  <p id="userEmail" class="muted"></p>
+  <nav>
+   <button onclick="showPage('orderPage')">New Order</button>
+   <button onclick="showPage('ordersPage');loadOrders()">My Orders</button>
+   <button onclick="showPage('profilePage');loadProfile()">My Profile</button>
+   <button onclick="showPage('updatesPage');loadOrders()">Updates</button>
+   <button id="adminButton" class="hidden" onclick="showPage('adminPage');loadAdmin()">Admin Dashboard</button>
+   <button class="secondary" onclick="logout()">Sign out</button>
+  </nav>
+ </div>
 
-<div id="orderPage" class="panel">
-<h2>Place a Design Order</h2>
-<label>Your name</label>
-<input id="customerName" placeholder="Full name">
-<label>Design category</label>
-<select id="category">
-<option value="">Choose a service</option>
-<option>Poster Design</option>
-<option>Logo Design</option>
-<option>Flyer Design</option>
-<option>Banner Design</option>
-<option>Custom Design</option>
-</select>
-<label>Describe your design</label>
-<textarea id="description" placeholder="Explain your design idea, colours, text and other details..."></textarea>
-<label>Deadline</label>
-<input id="deadline" type="date">
-<label>Budget (₦)</label>
-<input id="budget" type="number" min="0" placeholder="Your budget">
-<button onclick="placeOrder()">Submit Order</button>
-<p id="orderMessage"></p>
-</div>
+ <div id="orderPage" class="panel section">
+  <h2>Place a design order</h2>
+  <label>Your name</label>
+  <input id="customerName" placeholder="Full name">
+  <label>Design category</label>
+  <select id="category">
+   <option value="">Choose a service</option>
+   <option>Poster Design</option>
+   <option>Logo Design</option>
+   <option>Flyer Design</option>
+   <option>Banner Design</option>
+   <option>Custom Design</option>
+  </select>
+  <label>Design description</label>
+  <textarea id="description" placeholder="Describe your idea, colours, wording and requirements"></textarea>
+  <label>Reference image link (optional)</label>
+  <input id="reference" type="url" placeholder="Paste a picture link if you have one">
+  <label>Deadline</label>
+  <input id="deadline" type="date">
+  <label>Budget (₦)</label>
+  <input id="budget" type="number" min="0" placeholder="Your budget">
+  <button onclick="placeOrder()">Submit Order</button>
+  <p id="orderMessage" class="muted"></p>
+ </div>
 
-<div id="ordersPage" class="panel hidden">
-<h2>My Orders</h2>
-<div id="ordersList">Your orders will appear here.</div>
-</div>
+ <div id="ordersPage" class="panel section hidden">
+  <h2>My Orders</h2>
+  <input id="orderSearch" placeholder="Search my orders..." oninput="filterOrders()">
+  <select id="orderFilter" onchange="filterOrders()">
+   <option value="All">All statuses</option>
+   <option>Pending</option><option>Accepted</option>
+   <option>Processing</option><option>Completed</option>
+   <option>Rejected</option>
+  </select>
+  <div id="ordersList">Loading...</div>
+ </div>
 
-<div id="adminPage" class="panel hidden">
-<h2>PIXELVAULT Admin Dashboard</h2>
-<p>Manage customer design orders here.</p>
-<button onclick="loadAdminOrders()">Refresh Orders</button>
-<div id="adminOrders">Loading orders...</div>
-</div>
+ <div id="profilePage" class="panel section hidden">
+  <h2>My Profile</h2>
+  <label>Full name</label>
+  <input id="profileName" placeholder="Your name">
+  <label>Phone number</label>
+  <input id="profilePhone" placeholder="Your phone number">
+  <label>About you</label>
+  <textarea id="profileBio" placeholder="A short introduction"></textarea>
+  <button onclick="saveProfile()">Save Profile</button>
+  <p id="profileMessage" class="muted"></p>
+ </div>
+
+ <div id="updatesPage" class="panel section hidden">
+  <h2>Order Updates</h2>
+  <p class="muted">Check the latest status of your orders here.</p>
+  <div id="updatesList"></div>
+ </div>
+
+ <div id="adminPage" class="panel section hidden">
+  <h2>PIXELVAULT Admin</h2>
+  <p class="muted">Administrator control centre</p>
+  <div class="grid">
+   <div class="card"><p class="muted">Total orders</p><div class="stat" id="totalStat">0</div></div>
+   <div class="card"><p class="muted">Pending</p><div class="stat" id="pendingStat">0</div></div>
+   <div class="card"><p class="muted">Processing</p><div class="stat" id="processingStat">0</div></div>
+   <div class="card"><p class="muted">Completed</p><div class="stat" id="completedStat">0</div></div>
+  </div>
+  <h3>Customer Orders</h3>
+  <input id="adminSearch" placeholder="Search customer or order..." oninput="filterAdmin()">
+  <select id="adminFilter" onchange="filterAdmin()">
+   <option value="All">All statuses</option>
+   <option>Pending</option><option>Accepted</option>
+   <option>Processing</option><option>Completed</option>
+   <option>Rejected</option>
+  </select>
+  <button onclick="loadAdmin()">Refresh dashboard</button>
+  <div id="adminOrders"></div>
+  <h3>Customer Profiles</h3>
+  <button onclick="loadCustomers()">View Customers</button>
+  <div id="customerList"></div>
+ </div>
+</section>
+
+<section class="section panel">
+ <h2>Contact PIXELVAULT</h2>
+ <p class="muted">Need help with an order? Contact the design team.</p>
+ <p>Email: Add your business email here</p>
+ <p>WhatsApp: Add your business number here</p>
 </section>
 </main>
 
-<footer>PIXELVAULT © 2026 — Your ideas, our creativity.</footer>
+<footer>PIXELVAULT © 2026 · Your ideas, our creativity.</footer>
 
 <script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
-
+import {initializeApp} from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
 import {
- getAuth, createUserWithEmailAndPassword,
- signInWithEmailAndPassword, signOut, onAuthStateChanged
+ getAuth,createUserWithEmailAndPassword,
+ signInWithEmailAndPassword,signOut,onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
-
 import {
- getFirestore, collection, addDoc, query, where,
- getDocs, serverTimestamp, doc, updateDoc
+ getFirestore,collection,addDoc,query,where,
+ getDocs,serverTimestamp,doc,getDoc,setDoc,updateDoc
 } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
 
-const firebaseConfig = {
- apiKey: "AIzaSyAWXvBdMzujdqXRDHtp-IVHsx5u6psTN_U",
- authDomain: "pixelvault-c787a.firebaseapp.com",
- projectId: "pixelvault-c787a",
- storageBucket: "pixelvault-c787a.firebasestorage.app",
- messagingSenderId: "783652401323",
- appId: "1:783652401323:web:d27a1a6e70fa3b090f87ee",
- measurementId: "G-D8BSC103K3"
+const firebaseConfig={
+ apiKey:"AIzaSyAWXvBdMzujdqXRDHtp-IVHsx5u6psTN_U",
+ authDomain:"pixelvault-c787a.firebaseapp.com",
+ projectId:"pixelvault-c787a",
+ storageBucket:"pixelvault-c787a.firebasestorage.app",
+ messagingSenderId:"783652401323",
+ appId:"1:783652401323:web:d27a1a6e70fa3b090f87ee",
+ measurementId:"G-D8BSC103K3"
 };
 
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
+const app=initializeApp(firebaseConfig);
+const auth=getAuth(app);
+const db=getFirestore(app);
+const ADMIN_UID="n2EJp8ilxIcARSsVhbAWRpFCB1J2";
 
-const ADMIN_UID = "n2EJp8ilxIcARSsVhbAWRpFCB1J2";
+let customerOrders=[];
+let allAdminOrders=[];
 
-window.showAuth = () => {
+window.showAuth=()=>{
  document.getElementById("authSection").classList.remove("hidden");
  document.getElementById("authSection").scrollIntoView({behavior:"smooth"});
 };
 
-window.goToOrder = () => {
+window.goToOrder=()=>{
  if(auth.currentUser){
-  showPage("orderPage");
   document.getElementById("userSection").classList.remove("hidden");
+  showPage("orderPage");
   document.getElementById("orderPage").scrollIntoView({behavior:"smooth"});
  }else showAuth();
 };
 
-window.signup = async () => {
- const email=document.getElementById("email").value.trim();
- const password=document.getElementById("password").value;
+window.signup=async()=>{
  try{
-  await createUserWithEmailAndPassword(auth,email,password);
-  document.getElementById("authMessage").textContent="Account created successfully!";
- }catch(e){
-  document.getElementById("authMessage").textContent=e.message;
- }
+  await createUserWithEmailAndPassword(
+   auth,email.value.trim(),password.value
+  );
+  authMessage.textContent="Account created!";
+ }catch(e){authMessage.textContent=e.message;}
 };
 
-window.login = async () => {
- const email=document.getElementById("email").value.trim();
- const password=document.getElementById("password").value;
+window.login=async()=>{
  try{
-  await signInWithEmailAndPassword(auth,email,password);
-  document.getElementById("authMessage").textContent="Login successful!";
- }catch(e){
-  document.getElementById("authMessage").textContent=e.message;
- }
+  await signInWithEmailAndPassword(
+   auth,email.value.trim(),password.value
+  );
+  authMessage.textContent="Login successful!";
+ }catch(e){authMessage.textContent=e.message;}
 };
 
-window.logout = async () => {
- await signOut(auth);
-};
+window.logout=()=>signOut(auth);
 
 onAuthStateChanged(auth,user=>{
- const accountArea=document.getElementById("accountArea");
- const userSection=document.getElementById("userSection");
- const authSection=document.getElementById("authSection");
- const adminButton=document.getElementById("adminButton");
-
+ const section=document.getElementById("userSection");
+ const admin=document.getElementById("adminButton");
  if(user){
-  accountArea.textContent="Account active";
-  userSection.classList.remove("hidden");
-  authSection.classList.add("hidden");
+  section.classList.remove("hidden");
+  document.getElementById("authSection").classList.add("hidden");
   document.getElementById("userEmail").textContent=user.email;
-  adminButton.classList.toggle("hidden",user.uid!==ADMIN_UID);
+  admin.classList.toggle("hidden",user.uid!==ADMIN_UID);
+  loadProfile();
  }else{
-  accountArea.innerHTML='<button onclick="showAuth()">Sign in</button>';
-  userSection.classList.add("hidden");
-  adminButton.classList.add("hidden");
+  section.classList.add("hidden");
+  admin.classList.add("hidden");
+  document.getElementById("accountArea").innerHTML=
+   '<button onclick="showAuth()">Sign in</button>';
  }
 });
 
-window.showPage = page => {
- ["orderPage","ordersPage","adminPage"].forEach(id=>{
-  document.getElementById(id).classList.add("hidden");
- });
+window.showPage=page=>{
+ ["orderPage","ordersPage","profilePage","updatesPage","adminPage"]
+ .forEach(id=>document.getElementById(id).classList.add("hidden"));
  document.getElementById(page).classList.remove("hidden");
 };
 
-window.placeOrder = async () => {
+window.placeOrder=async()=>{
  const user=auth.currentUser;
- if(!user)return alert("Please sign in first.");
+ if(!user)return alert("Please sign in.");
 
  const name=document.getElementById("customerName").value.trim();
  const category=document.getElementById("category").value;
  const description=document.getElementById("description").value.trim();
+ const reference=document.getElementById("reference").value.trim();
  const deadline=document.getElementById("deadline").value;
  const budget=document.getElementById("budget").value;
 
  if(!name||!category||!description){
-  alert("Please fill in your name, category and description.");
+  alert("Fill in your name, category and description.");
   return;
  }
 
+ const button=document.querySelector("#orderPage button");
+ button.disabled=true;
  try{
   const ref=await addDoc(collection(db,"orders"),{
-   userId:user.uid,
-   customerName:name,
-   category,
-   description,
-   deadline,
-   budget:budget ? Number(budget) : null,
-   status:"Pending",
-   createdAt:serverTimestamp()
+   userId:user.uid,customerName:name,category,description,
+   reference,deadline,budget:budget?Number(budget):null,
+   status:"Pending",createdAt:serverTimestamp()
   });
-
   document.getElementById("orderMessage").textContent=
-   "Order submitted! Your order ID is: "+ref.id;
-
-  document.getElementById("description").value="";
+   "Order submitted! ID: "+ref.id;
+  ["customerName","description","reference","deadline","budget"]
+   .forEach(id=>document.getElementById(id).value="");
   document.getElementById("category").value="";
-  document.getElementById("deadline").value="";
-  document.getElementById("budget").value="";
  }catch(e){
-  document.getElementById("orderMessage").textContent="Order failed: "+e.message;
- }
+  document.getElementById("orderMessage").textContent=e.message;
+ }finally{button.disabled=false;}
 };
 
-window.loadOrders = async () => {
+function makeOrderCard(item,isAdmin=false){
+ const o=item.data();
+ const div=document.createElement("div");
+ div.className="order";
+ function line(tag,text){
+  const el=document.createElement(tag);
+  el.textContent=text;
+  div.appendChild(el);
+ }
+ line("h3",o.category||"Design Order");
+ line("p","Customer: "+(o.customerName||"Not provided"));
+ line("p","Description: "+(o.description||""));
+ line("p","Status: "+(o.status||"Pending"));
+ line("p","Deadline: "+(o.deadline||"Not specified"));
+ line("p","Budget: "+(o.budget==null?"Not specified":"₦"+o.budget));
+ line("small","Order ID: "+item.id);
+
+ if(o.reference){
+  const a=document.createElement("a");
+  a.href=o.reference;a.target="_blank";a.rel="noopener noreferrer";
+  a.textContent="Open reference image link";
+  div.appendChild(a);
+ }
+
+ if(isAdmin){
+  const choices=["Accepted","Processing","Completed","Rejected"];
+  choices.forEach(status=>{
+   const b=document.createElement("button");
+   b.textContent=status;
+   if(status==="Rejected")b.className="danger";
+   b.onclick=()=>changeStatus(item.id,status,b);
+   div.appendChild(b);
+  });
+ }
+ return div;
+}
+
+window.loadOrders=async()=>{
  const user=auth.currentUser;
  const list=document.getElementById("ordersList");
+ const updates=document.getElementById("updatesList");
  if(!user)return;
-
  list.textContent="Loading...";
  try{
   const q=query(collection(db,"orders"),where("userId","==",user.uid));
   const result=await getDocs(q);
-  list.innerHTML="";
+  customerOrders=result.docs;
+  renderCustomerOrders();
 
-  if(result.empty){
-   list.textContent="You have not placed any orders yet.";
-   return;
-  }
-
-  result.forEach(item=>{
-   const order=item.data();
-   const div=document.createElement("div");
-   div.className="order";
-
-   const title=document.createElement("h3");
-   title.textContent=order.category;
-
-   const description=document.createElement("p");
-   description.textContent=order.description;
-
-   const status=document.createElement("p");
-   status.className="status";
-   status.textContent="Status: "+order.status;
-
-   const id=document.createElement("small");
-   id.textContent="Order ID: "+item.id;
-
-   div.append(title,description,status,id);
-   list.appendChild(div);
+  updates.innerHTML="";
+  if(result.empty)updates.textContent="No updates yet.";
+  result.docs.forEach(item=>{
+   const o=item.data();
+   const p=document.createElement("p");
+   p.textContent=(o.category||"Order")+" — "+(o.status||"Pending");
+   updates.appendChild(p);
   });
- }catch(e){
-  list.textContent="Could not load orders: "+e.message;
- }
+ }catch(e){list.textContent="Could not load orders: "+e.message;}
 };
 
-window.loadAdminOrders = async () => {
+function renderCustomerOrders(){
+ const list=document.getElementById("ordersList");
+ list.innerHTML="";
+ if(!customerOrders.length){
+  list.textContent="No orders found.";
+  return;
+ }
+ customerOrders.forEach(item=>list.appendChild(makeOrderCard(item)));
+}
+
+window.filterOrders=()=>{
+ const search=document.getElementById("orderSearch").value.toLowerCase();
+ const status=document.getElementById("orderFilter").value;
+ const filtered=customerOrders.filter(item=>{
+  const o=item.data();
+  return (status==="All"||o.status===status)&&
+   (String(o.category||"").toLowerCase().includes(search)||
+    String(o.description||"").toLowerCase().includes(search)||
+    item.id.toLowerCase().includes(search));
+ });
+ const list=document.getElementById("ordersList");
+ list.innerHTML="";
+ if(!filtered.length){list.textContent="No matching orders.";return;}
+ filtered.forEach(item=>list.appendChild(makeOrderCard(item)));
+};
+
+window.loadProfile=async()=>{
+ const user=auth.currentUser;
+ if(!user)return;
+ try{
+  const snap=await getDoc(doc(db,"users",user.uid));
+  if(snap.exists()){
+   const p=snap.data();
+   profileName.value=p.name||"";
+   profilePhone.value=p.phone||"";
+   profileBio.value=p.bio||"";
+  }
+ }catch(e){profileMessage.textContent="Could not load profile: "+e.message;}
+};
+
+window.saveProfile=async()=>{
+ const user=auth.currentUser;
+ if(!user)return;
+ try{
+  await setDoc(doc(db,"users",user.uid),{
+   name:profileName.value.trim(),
+   phone:profilePhone.value.trim(),
+   bio:profileBio.value.trim(),
+   updatedAt:serverTimestamp()
+  },{merge:true});
+  profileMessage.textContent="Profile saved successfully!";
+ }catch(e){profileMessage.textContent="Could not save: "+e.message;}
+};
+
+window.loadAdmin=async()=>{
  const user=auth.currentUser;
  const list=document.getElementById("adminOrders");
-
- if(!user || user.uid!==ADMIN_UID){
+ if(!user||user.uid!==ADMIN_UID){
   list.textContent="Access denied.";
   return;
  }
-
- list.textContent="Loading all orders...";
-
+ list.textContent="Loading orders...";
  try{
   const result=await getDocs(collection(db,"orders"));
-  list.innerHTML="";
-
-  if(result.empty){
-   list.textContent="No customer orders yet.";
-   return;
-  }
-
-  result.forEach(item=>{
-   const order=item.data();
-   const div=document.createElement("div");
-   div.className="order";
-
-   const title=document.createElement("h3");
-   title.textContent=order.category;
-
-   const customer=document.createElement("p");
-   customer.textContent="Customer: "+(order.customerName||"Not provided");
-
-   const description=document.createElement("p");
-   description.textContent="Description: "+order.description;
-
-   const deadline=document.createElement("p");
-   deadline.textContent="Deadline: "+(order.deadline||"Not specified");
-
-   const budget=document.createElement("p");
-   budget.textContent="Budget: "+(order.budget==null?"Not specified":"₦"+order.budget);
-
-   const status=document.createElement("p");
-   status.className="status";
-   status.textContent="Current status: "+order.status;
-
-   const id=document.createElement("small");
-   id.textContent="Order ID: "+item.id;
-
-   div.append(title,customer,description,deadline,budget,status,id);
-
-   const choices=["Accepted","Processing","Completed","Rejected"];
-   choices.forEach(choice=>{
-    const button=document.createElement("button");
-    button.textContent=choice;
-    button.className=choice==="Rejected"?"danger":"";
-    button.onclick=()=>changeStatus(item.id,choice,button);
-    div.appendChild(button);
-   });
-
-   list.appendChild(div);
-  });
- }catch(e){
-  list.textContent="Could not load orders: "+e.message;
- }
+  allAdminOrders=result.docs;
+  const count=status=>allAdminOrders.filter(
+   x=>x.data().status===status
+  ).length;
+  totalStat.textContent=allAdminOrders.length;
+  pendingStat.textContent=count("Pending");
+  processingStat.textContent=count("Processing");
+  completedStat.textContent=count("Completed");
+  renderAdminOrders();
+ }catch(e){list.textContent="Could not load admin orders: "+e.message;}
 };
 
-async function changeStatus(orderId,newStatus,button){
- const user=auth.currentUser;
- if(!user || user.uid!==ADMIN_UID){
-  alert("Administrator access required.");
-  return;
- }
+function renderAdminOrders(){
+ const list=document.getElementById("adminOrders");
+ list.innerHTML="";
+ if(!allAdminOrders.length){list.textContent="No orders yet.";return;}
+ allAdminOrders.forEach(item=>list.appendChild(makeOrderCard(item,true)));
+}
 
+window.filterAdmin=()=>{
+ const search=adminSearch.value.toLowerCase();
+ const status=adminFilter.value;
+ const filtered=allAdminOrders.filter(item=>{
+  const o=item.data();
+  return (status==="All"||o.status===status)&&
+   (String(o.customerName||"").toLowerCase().includes(search)||
+    String(o.category||"").toLowerCase().includes(search)||
+    item.id.toLowerCase().includes(search));
+ });
+ const list=document.getElementById("adminOrders");
+ list.innerHTML="";
+ if(!filtered.length){list.textContent="No matching orders.";return;}
+ filtered.forEach(item=>list.appendChild(makeOrderCard(item,true)));
+};
+
+async function changeStatus(id,status,button){
+ if(!auth.currentUser||auth.currentUser.uid!==ADMIN_UID){
+  alert("Admin access required.");return;
+ }
  button.disabled=true;
  try{
-  await updateDoc(doc(db,"orders",orderId),{status:newStatus});
-  await loadAdminOrders();
+  await updateDoc(doc(db,"orders",id),{status});
+  await loadAdmin();
  }catch(e){
-  alert("Could not update order: "+e.message);
+  alert("Status update failed: "+e.message);
   button.disabled=false;
  }
 }
+
+window.loadCustomers=async()=>{
+ const user=auth.currentUser;
+ const list=document.getElementById("customerList");
+ if(!user||user.uid!==ADMIN_UID){list.textContent="Access denied.";return;}
+ list.textContent="Loading customers...";
+ try{
+  const result=await getDocs(collection(db,"users"));
+  list.innerHTML="";
+  if(result.empty){list.textContent="No saved customer profiles yet.";return;}
+  result.forEach(item=>{
+   const p=item.data();
+   const div=document.createElement("div");
+   div.className="order";
+   const name=document.createElement("h4");
+   name.textContent=p.name||"Customer";
+   const phone=document.createElement("p");
+   phone.textContent="Phone: "+(p.phone||"Not provided");
+   const bio=document.createElement("p");
+   bio.textContent=p.bio||"No bio";
+   div.append(name,phone,bio);
+   list.appendChild(div);
+  });
+ }catch(e){list.textContent="Could not load customers: "+e.message;}
+};
 </script>
 </body>
 </html>
