@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<title>PIXELVAULT | Creative Design Studio</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#fff;color:#171717}
+header{height:75px;border-bottom:1px solid #eee;display:flex;align-items:center;justify-content:space-between;padding:0 7%;position:sticky;top:0;background:#fff;z-index:10}
+.logo{font-size:23px;font-weight:900;letter-spacing:-1px}
+.logo span{color:#777}
+nav{display:flex;gap:25px;align-items:center}
+nav a{color:#333;text-decoration:none;font-size:14px}
+nav a:hover{color:#777}
+.btn{background:#171717;color:white;border:0;padding:13px 20px;border-radius:5px;text-decoration:none;display:inline-block;font-size:14px;cursor:pointer}
+.hero{padding:100px 7% 90px;background:#f7f7f5}
+.hero small{letter-spacing:3px;color:#777;font-weight:bold}
+.hero h1{font-size:clamp(42px,7vw,76px);line-height:1.08;max-width:750px;margin:22px 0}
+.hero p{color:#666;line-height:1.8;max-width:500px;margin-bottom:28px}
+.section{padding:75px 7%}
+.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:35px}
+.section h2{font-size:32px}
+.section-head p{color:#777;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.service{border:1px solid #eee;border-radius:8px;overflow:hidden}
+.art{height:180px;display:flex;align-items:center;justify-content:center;font-size:35px;font-weight:900}
+.art1{background:#eeeae4;color:#292929}
+.art2{background:#202020;color:white}
+.art3{background:#e5e8ed;color:#333}
+.service-info{padding:20px}
+.service-info h3{margin-bottom:9px}
+.service-info p{font-size:13px;color:#777;line-height:1.6}
+.order{margin-top:16px;color:#171717;font-size:14px;font-weight:bold;text-decoration:none}
+.about{background:#f7f7f5;padding:65px 7%;display:flex;justify-content:space-between;gap:30px;align-items:center}
+.about p{max-width:500px;color:#666;line-height:1.8;margin-top:15px}
+footer{background:#171717;color:white;padding:35px 7%;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer p{color:#aaa;font-size:13px;margin-top:8px}
+@media(max-width:700px){
+header{padding:0 5%;height:65px}
+nav{gap:12px}
+nav a{font-size:12px}
+nav .contact-link{display:none}
+.hero{padding:75px 6%}
+.section{padding:60px 6%}
+.grid{grid-template-columns:1fr}
+.section-head{display:block}
+.section-head p{margin-top:10px}
+.about{display:block;padding:55px 6%}
+footer{padding:30px 6%}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">PIXEL<span>VAULT.</span></div>
+<nav>
+<a href="#home">Home</a>
+<a href="#services">Services</a>
+<a href="#about">About</a>
+<a class="contact-link" href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="hero" id="home">
+<small>CREATIVE DESIGN STUDIO</small>
+<h1>Your ideas deserve exceptional design.</h1>
+<p>We turn your imagination into beautiful visual designs. From professional posters to unique logos, let's bring your ideas to life.</p>
+<a href="#services" class="btn">Explore our services →</a>
+</section>
+
+<section class="section" id="services">
+<div class="section-head">
+<div>
+<h2>Our Services</h2>
+<p>Creative solutions for your brand and business.</p>
+</div>
+</div>
+<div class="grid">
+<div class="service">
+<div class="art art1">POSTER.</div>
+<div class="service-info">
+<h3>Poster Design</h3>
+<p>Professional promotional posters for your events, business and brand.</p>
+<a class="order" href="#contact">Order now →</a>
+</div>
+</div>
+<div class="service">
+<div class="art art2">LOGO.</div>
+<div class="service-info">
+<h3>Logo Design</h3>
+<p>Unique visual identities that make your brand recognizable.</p>
+<a class="order" href="#contact">Order now →</a>
+</div>
+</div>
+<div class="service">
+<div class="art art3">FLYER.</div>
+<div class="service-info">
+<h3>Flyer Design</h3>
+<p>Clean and attractive flyers for promotions and announcements.</p>
+<a class="order" href="#contact">Order now →</a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="about" id="about">
+<div>
+<small>ABOUT PIXELVAULT</small>
+<h2 style="margin-top:14px;font-size:32px">Creativity meets quality.</h2>
+<p>PIXELVAULT is a creative design platform built to help individuals and businesses turn ideas into outstanding designs. Every project deserves attention to detail.</p>
+</div>
+</section>
+
+<section class="section" id="contact">
+<h2>Ready to create something?</h2>
+<p style="color:#777;margin:15px 0 25px">Contact us to discuss your next design project.</p>
+<a class="btn" href="mailto:">Contact PIXELVAULT →</a>
+</section>
+
+<footer>
+<div>
+<div class="logo">PIXELVAULT.</div>
+<p>Your ideas. Our creativity.</p>
+</div>
+<p>© 2026 PIXELVAULT. All rights reserved.</p>
+</footer>
+
+</body>
+  </html>
+  
