@@ -5,39 +5,209 @@
  <meta name="google-site-verification" content="JwBstM5rG6Tng6XWfpJjaGRcQCNe1ECMOlhptUCTnTA" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PIXELVAULT | Design Studio</title>
-<style>
-*{box-sizing:border-box}
-body{margin:0;background:#f5f6f8;color:#202633;font-family:Arial,sans-serif}
-header{background:white;padding:17px 5%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #e5e7eb}
-.logo{font-size:23px;font-weight:900;letter-spacing:1px}
-.logo span{color:#3474d9}
-main{max-width:1100px;margin:auto;padding:22px 16px}
-button{background:#2866cc;color:white;border:0;border-radius:7px;padding:11px 15px;font-weight:bold;cursor:pointer;margin:3px}
-button.secondary{background:#e8edf5;color:#263449}
-button.danger{background:#a82e37}
-button:disabled{opacity:.5}
-input,textarea,select{width:100%;padding:12px;border:1px solid #dce0e7;border-radius:7px;margin:7px 0 14px;font:inherit}
-textarea{min-height:100px}
-label{font-size:14px;font-weight:bold}
-.hero{background:#18263c;color:white;padding:42px 25px;border-radius:12px}
-.hero h1{font-size:38px;margin:8px 0}
-.hero p{line-height:1.6;color:#d7deeb}
-.section{margin-top:25px}
-.panel,.card{background:white;border:1px solid #e6e8ed;border-radius:10px;padding:20px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
-nav{display:flex;flex-wrap:wrap;gap:5px;margin-top:15px}
-nav button{font-size:13px}
-.hidden{display:none!important}
-.order{padding:15px;border:1px solid #e3e6ec;border-radius:8px;margin:12px 0}
-.muted{color:#707987;font-size:14px}
-.stat{font-size:28px;font-weight:800;color:#2866cc}
-.tag{display:inline-block;background:#edf2fa;padding:5px 9px;border-radius:20px;font-size:12px}
-footer{text-align:center;padding:30px;color:#78808c}
-</style>
  <link rel="icon" type="image/png" href="/pixelvault-app/favicon.png">
 </head>
 <body>
+</style>
+/* PIXELVAULT MARKETPLACE REDESIGN */
+:root {
+  --pv-orange: #f36b21;
+  --pv-dark: #242424;
+  --pv-bg: #f7f7f7;
+  --pv-muted: #777;
+}
 
+body {
+  background: var(--pv-bg);
+  color: var(--pv-dark);
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background: #fff;
+  padding: 17px 5%;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.logo {
+  font-size: 25px;
+  letter-spacing: -1px;
+  color: var(--pv-dark);
+}
+
+.logo span {
+  color: var(--pv-orange);
+}
+
+main {
+  max-width: 1250px;
+  padding: 25px 18px;
+}
+
+button {
+  background: var(--pv-orange);
+  color: white;
+  border: 0;
+  border-radius: 6px;
+  padding: 12px 18px;
+  font-weight: 700;
+  transition: .2s ease;
+}
+
+button:hover {
+  background: #d95712;
+  transform: translateY(-1px);
+}
+
+button.secondary {
+  background: #eee;
+  color: #333;
+}
+
+button.danger {
+  background: #a82e37;
+}
+
+.hero {
+  background: linear-gradient(115deg, #252525, #454545);
+  color: white;
+  border-radius: 12px;
+  padding: 55px 35px;
+  min-height: 260px;
+}
+
+.hero > p:first-child {
+  color: #ffad79;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.hero h1 {
+  font-size: clamp(32px, 5vw, 52px);
+  line-height: 1.1;
+  max-width: 650px;
+}
+
+.hero p {
+  color: #e5e5e5;
+  line-height: 1.7;
+}
+
+.section {
+  margin-top: 35px;
+}
+
+.section h2 {
+  font-size: 23px;
+  margin-bottom: 18px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 9px;
+  padding: 20px;
+  transition: .2s ease;
+}
+
+.card:hover {
+  border-color: #f3a47b;
+  box-shadow: 0 5px 18px #0000000d;
+  transform: translateY(-3px);
+}
+
+.card h3 {
+  font-size: 17px;
+  margin: 10px 0;
+}
+
+.muted {
+  color: var(--pv-muted);
+  line-height: 1.6;
+}
+
+.tag {
+  background: #fff0e7;
+  color: #d95712;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+.panel {
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 22px;
+}
+
+input, textarea, select {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 13px;
+  outline: none;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--pv-orange);
+  box-shadow: 0 0 0 2px #f36b211a;
+}
+
+nav {
+  gap: 7px;
+}
+
+nav button {
+  font-size: 12px;
+}
+
+.order {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 17px;
+}
+
+.stat {
+  color: var(--pv-orange);
+}
+
+footer {
+  background: #242424;
+  color: #ccc;
+  margin-top: 45px;
+  padding: 30px 15px;
+}
+
+@media(max-width:600px) {
+  .hero {
+    padding: 35px 22px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .panel {
+    padding: 16px;
+  }
+
+  nav button {
+    padding: 10px;
+  }
+}
+</style>
 <header>
  <div class="logo">PIXEL<span>VAULT</span></div>
  <div id="accountArea"><button onclick="showAuth()">Sign in</button></div>
